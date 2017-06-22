@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static%}
+    <meta charset="UTF-8">
+    <title>{% block title %}Company Name{% endblock %}</title>
+    <link href="{% static '/main/bootstrap/css/bootstrap.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static '/main/css/main.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static '/main/font-awesome-4.7.0/css/font-awesome.css' %}" rel="stylesheet" type="text/css">
+
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+</head>
+<body>
+<div class="header-image">
+    <h1>Company Name Very Fancy</h1>
+</div>
+
+<!--Collapsable Navbar-->
+<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="125">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">WebSiteName</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'breeder' %}">About me</a></li>
+                <li><a href="{% url 'species'%}">About the species</a></li>
+                <li><a href="{% url 'animal'%}">Available animals</a></li>
+                <li><a href="{% url 'contact'%}">Contact</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><p class="navbar-text">See us also on:</p></li>
+                <li><a href="#" class="navbar-brand"><i class="fa fa-facebook-square fa-lg"></i></a></li>
+                <li><a href="#" class="navbar-brand"><i class="fa fa-instagram fa-lg"></i> </a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="maindiv">
+    {% block content %}
+    {% endblock content %}
+</div>
+
+
+<script src="{% static '/main/js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static '/main/bootstrap/js/bootstrap.js' %}"></script>
+<script src="{% static '/main/js/gender-select-handler.js' %}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+</body>
+</html>

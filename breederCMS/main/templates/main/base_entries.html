@@ -1,0 +1,71 @@
+{% extends "main/base.html" %}
+
+{% block title %}Animals{% endblock %}
+{%block content%}
+<div class="row">
+    <div class="col-xs-0 col-sm-1 col-md-3">
+        <div class="filter-fixed" data-spy="affix" data-offset-top="125">
+            <div class="form-group">
+              <label >Filter gender:</label>
+              <select class="selectpicker">
+                 <option data-icon="fa fa-transgender fa-lg">All</option>
+                  <option data-icon="fa fa-venus fa-lg">Female</option>
+                  <option data-icon="fa fa-mars fa-lg">Male</option>
+              </select>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-10 col-md-6">
+
+        <div>
+            {% for animal in animals %}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <ul class="list-inline">
+                        <li><strong>{{ animal.name }}</strong></li>
+                        <li>
+                            {% if animal.gender == "M" %}
+                            <i class="fa fa-mars fa-lg" aria-hidden="true"></i>
+                            {% else %}
+                            <i class="fa fa-venus fa-lg" aria-hidden="true"></i>
+                            {% endif %}
+                        </li>
+                        <li class="pull-right">
+                            {% if animal.status == "A" %}
+                            <i class="fa fa-check fa-lg" aria-hidden="true"></i>
+                            {% elif animal.status == "R" %}
+                            <i class="fa fa-address-book fa-lg" aria-hidden="true"></i>
+                            {% elif animal.status == "S" %}
+                            <i class="fa fa-times fa-lg" aria-hidden="true"></i>
+                            {% endif%}
+                        </li>
+                        <li class="pull-right"><strong>Status:</strong></li>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            {% load daguerre %}
+                            <img class="img-responsive portrait" src="{% adjust animal.picture 'namedcrop' name='face' %}" />
+                            <!--<img class="img-responsive portrait" src="{{animal.picture.url}}">-->
+                        </div>
+                        <div class="col-sm-9">
+                            <h4>{{animal.description}}</h4>
+                        </div>
+                        <div></div>
+                    </div>
+                </div>
+                <br>
+
+            </div>
+            <br>
+            {% empty %}
+            <h3>There are no Animals available currently, check back later! :(</h3>
+            {% endfor %}
+        </div>
+        <!--/<div class="col-xs-0 col-sm-1 col-md-3"></div>-->
+    </div>
+</div>
+
+{% endblock content%}
