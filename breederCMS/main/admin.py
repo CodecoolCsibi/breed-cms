@@ -1,14 +1,22 @@
 from django.contrib import admin
-from django.db import models
 from .models import AnimalEntry
-from daguerre.widgets import AreaWidget
+from django.forms import ModelForm
 
 
-class MyModelAdmin(admin.ModelAdmin):
-    formfield_overrides = {
-        models.ImageField: {'widget': AreaWidget},
-    }
+class AnimalForm(ModelForm):
+    class Meta:
+        model = AnimalEntry
+        fields = ['name', 'gender', 'status', 'color', 'date_of_birth', 'picture', 'description']
 
 
-admin.site.register(AnimalEntry, MyModelAdmin)
+class AnimalAdmin(admin.ModelAdmin):
+    list_display = ('name', 'gender', 'status', 'color')
+    search_fields = ['name', 'description']
+    form = AnimalForm
+
+admin.site.register(AnimalEntry, AnimalAdmin)
+
+
+
+
 

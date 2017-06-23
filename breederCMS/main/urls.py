@@ -6,7 +6,6 @@ from . import views
 
 
 urlpatterns = [
-    url(r'^daguerre/', include('daguerre.urls')),
     url(r'^species$', views.about_animal, name='species'),
     url(r'^breeder$', views.about_breeder, name='breeder'),
     url(r'^contact$', views.contact, name='contact'),
