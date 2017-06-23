@@ -123,3 +123,26 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_ROOT = '/home/csibi/PycharmProjects/breed-cms/breederCMS/breederCMS/media'
 MEDIA_URL = '/media/'
+
+# UploadCare data
+UPLOADCARE = {
+    'pub_key': '73277d5aa685825091c2',
+    'secret': '8ff2183f73c033b32596',
+}
+
+# UPLOADCARE_LOCALE_TRANSLATIONS = {
+#   'buttons': {
+#     'cancel': 'Cancel',
+#     'remove': 'Remove',
+#     'choose': {
+#       'files': {
+#         'one': 'Válassz',
+#         'other': 'Choose files'
+#       },
+#       'images': {
+#         'one': 'Choose an image',
+#         'other': 'Choose images'
+#       }
+#     }
+#   }
+# };

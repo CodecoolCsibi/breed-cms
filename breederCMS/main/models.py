@@ -1,5 +1,6 @@
 from django.db import models
-from django.forms import ModelForm
+from pyuploadcare.dj.models import ImageField
+
 
 AVAILABLE = 'A'
 RESERVED = 'R'
@@ -29,6 +30,6 @@ class AnimalEntry(models.Model):
     gender = models.CharField(max_length=1, choices=GENDER, default=MALE)
     status = models.CharField(max_length=1, choices=STATUS, default=AVAILABLE)
     color = models.CharField(max_length=2, choices=COLOR, default=TABBY)
-    picture = models.ImageField(blank=True, upload_to='media/images/')
-    cropped_picture = models.ImageField(blank=True, upload_to='media/cropped/')
+    picture = ImageField(blank=True, manual_crop="300x300 minimum")
     description = models.CharField(max_length=200, blank=True)
+
