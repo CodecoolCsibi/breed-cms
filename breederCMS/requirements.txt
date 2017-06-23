@@ -1,7 +1,17 @@
+certifi==2017.4.17
+chardet==3.0.4
 Django==1.11.2
 django-appconf==1.0.1
 django-daguerre==2.2.3
+django-image-cropping==1.0.4
+easy-thumbnails==2.4.1
+idna==2.5
 olefile==0.44
 Pillow==4.1.1
+python-dateutil==2.6.0
 pytz==2017.2
+pyuploadcare==2.2.1
+requests==2.18.1
 six==1.10.0
+South==1.0.2
+urllib3==1.21.1
