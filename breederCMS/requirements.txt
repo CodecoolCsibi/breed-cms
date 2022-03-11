@@ -7,7 +7,7 @@ django-image-cropping==1.0.4
 easy-thumbnails==2.4.1
 idna==2.5
 olefile==0.44
-Pillow==4.1.1
+Pillow==9.0.1
 python-dateutil==2.6.0
 pytz==2017.2
 pyuploadcare==2.2.1
